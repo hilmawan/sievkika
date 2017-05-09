@@ -179,7 +179,7 @@ class app_model extends CI_Model {
 
 	function sawtunggal($kode)
 	{
-		$sql = "SELECT parameter_id,nilai,bobot FROM tbl_nilai_parameter a
+		$sql = "SELECT a.parameter_id,a.nilai,b.bobot,b.final_weight FROM tbl_nilai_parameter a
 				JOIN tbl_parameter b ON a.`parameter_id` = b.`id_parameter`
 				WHERE a.`kd_input` = '".$kode."'";
 		return $this->db->query($sql)->result();
@@ -236,6 +236,49 @@ class app_model extends CI_Model {
 		$sql = $this->db->query("SELECT id_jadwal FROM tbl_jadwal WHERE kd_mk = '".$mk."' AND tahunajaran = '".$tahun."'")->row();
         return $sql1 = $this->db->query("SELECT COUNT(nim) as jml FROM tbl_kelas WHERE id_jadwal = ".$sql->id_jadwal." ")->row(); 
 	}
+
+	function nilaimax()
+	{
+		return $this->db->query("SELECT * from tbl_nilai_parameter")->result();
+	}
+
+	function loadevalperson()
+	{
+		return $this->db->query("SELECT DISTINCT a.kd_input,a.usr,b.unit,a.tgl_input,c.nama_karyawan,c.nik FROM tbl_nilai_parameter a 
+							JOIN tbl_unit b ON a.kd_unit = b.kd_unit
+							JOIN tbl_karyawan c ON c.nik = a.usr");
+	}
+
+	function lookval($kd)
+	{
+		return $this->db->select('nilai,parameter,nama_karyawan')
+						->from('tbl_nilai_parameter a')
+						->join('tbl_parameter b','a.parameter_id = b.id_parameter')
+						->join('tbl_karyawan c','c.nik = a.usr')
+						->where('kd_input',$kd)
+						->get();
+	}
+
+	function countemploye($unit)
+	{
+		return $this->db->query("SELECT count(nik) as jum from tbl_karyawan where kd_unit = '".$unit."' and kd_jabatan = 'stf'")->row()->jum;
+	}
+
+	function countvalue($un)
+	{
+		return $this->db->query("SELECT count(distinct kd_input) as jums from tbl_nilai_parameter where kd_unit = '".$un."'")->row()->jums;
+	}
+
+	function foreval($unt,$p)
+	{
+		return $this->db->query("SELECT max(nilai) as max from tbl_nilai_parameter where kd_unit = '".$unt."' and parameter_id = '".$p."'")->row()->max;
+	}
+
+	function muataja($id,$kd)
+	{
+		return $this->db->query("SELECT a.nilai, b.final_weight, a.kd_input from tbl_nilai_parameter a join tbl_parameter b on a.parameter_id = b.id_parameter where a.parameter_id = '".$id."' and a.kd_unit = '".$kd."'")->result();
+	}
+
 	
 }
 

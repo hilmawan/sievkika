@@ -7,7 +7,7 @@
     <meta name="author" content="Dashboard">
     <meta name="keyword" content="Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
 
-    <title>Sistem Evaluasi KInerja Karyawan</title>
+    <title>Sistem Evaluasi Kinerja Karyawan</title>
 
     <!-- Bootstrap core CSS -->
     <link href="<?php echo base_url(); ?>assets/css/bootstrap.css" rel="stylesheet">
@@ -82,6 +82,7 @@
                           </a>
                           <ul class="sub">
                               <li><a  href="<?php echo base_url(); ?>spi/eval_kary">Hasil Evaluasi</a></li>
+                              <!-- <li><a  href="<?php echo base_url(); ?>bau/exeval">Data Nilai</a></li> -->
                           </ul>
                       </li>
                       <li class="sub-menu">
@@ -90,8 +91,8 @@
                               <span>Parameter</span>
                           </a>
                           <ul class="sub">
-                              <li><a  href="<?php echo base_url(); ?>spi/topik">Topik</a></li>
-                              <li><a  href="<?php echo base_url(); ?>spi/parameter">Parameter</a></li>
+                              <li><a  href="<?php echo base_url(); ?>spi/topik">Variabel</a></li>
+                              <li><a  href="<?php echo base_url(); ?>spi/parameter">Indikator</a></li>
                               <li><a  href="<?php echo base_url(); ?>spi/skala">Skala Likert </a></li>
                           </ul>
                       </li>
@@ -104,6 +105,7 @@
                           <ul class="sub">
                               <li><a  href="<?php echo base_url(); ?>kadiv/fill_point">Pengisian Angket</a></li>
                               <li><a  href="<?php echo base_url(); ?>spi/eval_kary">Hasil Evaluasi</a></li>
+                              <!-- <li><a  href="<?php echo base_url(); ?>bau/exeval">Data Nilai</a></li> -->
                           </ul>
                       </li>
                   <?php } elseif ($sess == 3) { ?>
@@ -125,6 +127,7 @@
                           </a>
                           <ul class="sub">
                               <li><a  href="<?php echo base_url(); ?>spi/eval_kary">Hasil Evaluasi</a></li>
+                              <!-- <li><a  href="<?php echo base_url(); ?>bau/exeval">Data Nilai</a></li> -->
                           </ul>
                       </li>
                       <li class="sub-menu">
@@ -133,8 +136,8 @@
                               <span>Parameter</span>
                           </a>
                           <ul class="sub">
-                              <li><a  href="<?php echo base_url(); ?>spi/topik">Topik</a></li>
-                              <li><a  href="<?php echo base_url(); ?>spi/parameter">Parameter</a></li>
+                              <li><a  href="<?php echo base_url(); ?>spi/topik">Variabel</a></li>
+                              <li><a  href="<?php echo base_url(); ?>spi/parameter">Indikator</a></li>
                               <li><a  href="<?php echo base_url(); ?>spi/skala">Skala Likert </a></li>
                           </ul>
                       </li>
@@ -170,7 +173,7 @@
       <!--footer start-->
       <footer class="site-footer">
           <div class="text-center">
-              2014 - Alvarez.is
+              <?php   echo date('Y'); ?> - Sistem Evaluasi Kinerja Karyawan
               <a href="blank.html#" class="go-top">
                   <i class="fa fa-angle-up"></i>
               </a>

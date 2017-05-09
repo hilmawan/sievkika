@@ -12,7 +12,7 @@ $('#edit').load('<?php echo base_url();?>spi/topikedit/'+id);
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Topik Parameter</h3>
+            <h3 class="box-title">Data Variabel</h3>
           </div><!-- /.box-header -->
           <div class="box-body">
           <?php if ($this->session->userdata('user_type') != '1') {
@@ -24,8 +24,8 @@ $('#edit').load('<?php echo base_url();?>spi/topikedit/'+id);
             <table id="example1" class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Kode Topik</th>
-                  <th>Topik</th>
+                  <th>Kode Variabel</th>
+                  <th>Variabel</th>
                   <?php if ($this->session->userdata('user_type')  != '1') {
                     echo "";
                   } else { ?>
@@ -64,7 +64,7 @@ $('#edit').load('<?php echo base_url();?>spi/topikedit/'+id);
                 <button class="close" aria-label="Close" data-dismiss="modal" type="button">
                   <span aria-hidden="true">×</span>
                 </button>
-                <h4 class="modal-title">Tambah Data Topik</h4>
+                <h4 class="modal-title">Tambah Data Variabel</h4>
             </div>
             <form role='form' action="<?php echo base_url();?>spi/topiksave" method="post">
                 <div class="modal-body"> 
@@ -72,12 +72,12 @@ $('#edit').load('<?php echo base_url();?>spi/topikedit/'+id);
                     <table>
                       <tbody>
                         <tr>
-                          <td width="150" align="center">Kode Topik</td>
-                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Kode Topik" name="kode" required/></td>
+                          <td width="150" align="center">Kode Variabel</td>
+                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Kode Variabel" name="kode" required/></td>
                         </tr>
                         <tr>
-                          <td width="150" align="center">Topik</td>
-                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Topik" name="topik" required/></td>
+                          <td width="150" align="center">Variabel</td>
+                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Variabel" name="topik" required/></td>
                         </tr>
                       </tbody>
                     </table>

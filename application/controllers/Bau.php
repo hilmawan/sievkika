@@ -141,6 +141,24 @@ class Bau extends CI_Controller {
 		echo "<script>alert('Berhasil'); document.location.href='".base_url()."bau/data_jabatan';</script>";
 	}
 
+	function exeval()
+	{
+		$data['qry'] = $this->app_model->loadevalperson()->result();
+		// $data['jum'] = $this->app_model->htgjum();
+		$data['kry'] = $this->db->query("SELECT count(distinct nik) as jum from tbl_karyawan where kd_jabatan = 'stf'")->row();
+		$data['vlu'] = $this->db->query("SELECT count(distinct kd_input) as jum from tbl_nilai_parameter")->row();
+
+		$data['page'] = "bau/v_exe";
+		$this->load->view('template', $data);
+	}
+
+	function detil_nilai($kd)
+	{
+		$data['z'] = $this->app_model->lookval($kd)->result();
+		$data['n'] = $this->app_model->lookval($kd)->row();
+		$data['page'] = "bau/v_detval";
+		$this->load->view('template', $data);
+	}
 }
 
 /* End of file Bau.php */

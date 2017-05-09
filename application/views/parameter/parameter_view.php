@@ -13,13 +13,14 @@ $('#edit').load('<?php echo base_url();?>spi/parameteredit/'+id);
 
         <div class="box">
           <div class="box-header">
-            <h3 class="box-title">Data Parameter</h3>
+            <h3 class="box-title">Data Indikator</h3>
           </div><!-- /.box-header -->
           <div class="box-body">
             <?php if ($this->session->userdata('user_type')  != '1') {
               echo "";
             } else { ?>
               <a data-toggle="modal" href="#myModal" ><button class="btn btn-primary btn-flat">+ Tambah Data</button></a>
+              <a href="<?php echo base_url('nilai/gen_weight'); ?>" class="btn btn-success btn-flat" title="">Generate Bobot</a>
             <?php }
              ?>
              <hr>
@@ -27,9 +28,9 @@ $('#edit').load('<?php echo base_url();?>spi/parameteredit/'+id);
               <thead>
                 <tr>
                   <th>No</th>
-                  <th>Parameter</th>
+                  <th>Indikator</th>
                   <th>Bobot</th>
-                  <th>Topik</th>
+                  <th>Variabel</th>
                   <?php if ($this->session->userdata('user_type')  != '1') {
                     echo "";
                   } else { ?>
@@ -78,18 +79,18 @@ $('#edit').load('<?php echo base_url();?>spi/parameteredit/'+id);
                     <table>
                       <tbody>
                         <tr>
-                          <td width="150" align="center">Parameter</td>
-                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Parameter" name="parameter" required/></td>
+                          <td width="150" align="center">Indikator</td>
+                          <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Indikator" name="parameter" required/></td>
                         </tr>
                         <tr>
                           <td width="150" align="center">Bobot</td>
-                          <td width="100" style="padding:5px;"><input class="form-control" type="number" placeholder="Parameter" name="bobot" required/></td>
+                          <td width="100" style="padding:5px;"><input class="form-control" type="number" placeholder="Bobot" name="bobot" required/></td>
                         </tr>
                         <tr>
-                          <td width="150" align="center">Topik</td>
+                          <td width="150" align="center">Variabel</td>
                           <td width="300" style="padding:5px;">
                             <select name="kode" class="form-control" required>
-                              <option disabled selected> -- Pilih Topik -- </option>
+                              <option disabled selected> -- Pilih Variabel -- </option>
                               <?php foreach ($getTopik as $key) { ?>
                                 <option value="<?php echo $key->kd_topik; ?>"><?php echo $key->kd_topik; ?>. <?php echo $key->topik; ?></option>
                               <?php } ?>

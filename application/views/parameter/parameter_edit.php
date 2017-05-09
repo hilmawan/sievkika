@@ -11,15 +11,15 @@
         <table>
           <tbody>
             <tr>
-              <td width="150" align="center">Parameter</td>
-              <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Parameter" name="parameter" value="<?php echo $getEdit->parameter; ?>" required/></td>
+              <td width="150" align="center">Indikator</td>
+              <td width="300" style="padding:5px;"><input class="form-control" type="text" placeholder="Indikator" name="parameter" value="<?php echo $getEdit->parameter; ?>" required/></td>
             </tr>
             <tr>
               <td width="150" align="center">Bobot</td>
-              <td width="100" style="padding:5px;"><input class="form-control" type="number" placeholder="Parameter" name="bobot" value="<?php echo $getEdit->bobot; ?>" required/></td>
+              <td width="100" style="padding:5px;"><input class="form-control" type="number" placeholder="Indikator" name="bobot" value="<?php echo $getEdit->bobot; ?>" required/></td>
             </tr>
             <tr>
-              <td width="150" align="center">Topik</td>
+              <td width="150" align="center">Variabel</td>
               <td width="300" style="padding:5px;">
                 <select name="kode" class="form-control" required>
                   <option value="<?php echo $getEdit->kd_topik; ?>" selected><?php echo $getEdit->topik; ?></option>

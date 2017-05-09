@@ -32,7 +32,7 @@
       *********************************************************************************************************************************************************** -->
       <style type="text/css" media="screen">
       	.atas {
-      		background: #FFD700 !important;
+      		background: #FF8C00 !important;
       	}
       </style>
 	  <div id="login-page">
@@ -44,9 +44,9 @@
 		        	<br>SIGN IN NOW
 		        </h2>
 		        <div class="login-wrap">
-		            <input type="text" class="form-control" name="user_name" placeholder="User ID" autofocus>
+		            <input type="text" class="form-control" name="user_name" placeholder="User ID" required autofocus>
 		            <br>
-		            <input type="password" name="user_password" class="form-control" placeholder="Password">
+		            <input type="password" name="user_password" class="form-control" placeholder="Password" required>
 		            <br>
 		            <button class="btn btn-warning btn-block" href="index.html" type="submit"><i class="fa fa-lock"></i> SIGN IN</button>
 		            <hr>
@@ -80,7 +80,7 @@
     <!-- You can use an image of whatever size. This script will stretch to fit in any screen size.-->
     <script type="text/javascript" src="<?php echo base_url(); ?>assets/js/jquery.backstretch.min.js"></script>
     <script>
-        $.backstretch("<?php echo base_url(); ?>assets/img/back.jpg", {speed: 500});
+        $.backstretch("<?php echo base_url(); ?>assets/img/backdrop.jpg", {speed: 500});
     </script>
 
 
